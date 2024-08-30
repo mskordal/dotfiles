@@ -1,6 +1,6 @@
 set number relativenumber
 set nocompatible
-set colorcolumn=80
+set colorcolumn=81
 let mapleader = " "
 set encoding=utf-8
 set listchars=tab:\|\ 
@@ -8,40 +8,53 @@ set list
 set termguicolors
 set t_Co=256
 set showmatch
+set noexpandtab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set splitright
+set splitbelow
 set clipboard=unnamedplus " Copy from vim to clipboard
 set is hls
+set wildmode=longest,list,full
+set wildmenu
+set tags=./tags,tags;$HOME
 let g:python_recommended_style = 0
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator' " Navigation between vim and tmux
-
-"Plug 'preservim/tagbar' " Display tag symbols of file in a sidebuffer
-
 Plug 'preservim/nerdcommenter' " Comment and uncomment
-
 Plug 'sheerun/vim-polyglot' " Better syntax highlight
 
 Plug 'ayu-theme/ayu-vim'
-Plug 'haishanh/night-owl.vim'
-Plug 'tomasr/molokai'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'lunacookies/vim-colors-xcode'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'drazil100/dusklight.vim'
 
 call plug#end()
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"colorscheme night-owl
-colorscheme molokai
-"colorscheme ayu
-"let g:airline_theme='ayu_dark'
+"let g:tokyonight_style = 'storm'
+"let g:tokyonight_enable_italic = 1
+"colorscheme dusklight
+"colorscheme tokyonight
+"colorscheme xcodedark
+"colorscheme molokai
+"colorscheme catppuccin_frappe
+"colorscheme catppuccin_macchiato
+"let ayucolor="mirage"
+colorscheme ayu
 
 "nmap <Esc> :nohlsearch<CR>
 
 nmap <leader>ct <plug>NERDCommenterToggle
 vmap <leader>ct <plug>NERDCommenterToggle
 
+nmap <leader>ht :noh<CR>
+vmap <leader>ht :noh<CR>
 "nmap <leader>tt :TagbarToggle<CR>
 "vmap <leader>tt :TagbarToggle<CR>
 " Useful commands
