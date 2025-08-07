@@ -17,7 +17,7 @@ antigen bundle zsh-users/zsh-completions
 
 # Load the theme.
 #antigen theme robbyrussell
-antigen theme sorin
+antigen theme bira
 # antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
@@ -25,3 +25,14 @@ antigen apply
 
 # aliases
 alias l="ls -lah"
+alias vim="vimx"
+alias open="xdg-open"
+
+# Path exports
+export PATH=$PATH:~/.local/share/eccodes/bin
+
+# Pyenv (handle multiple python versions)
+export PYENV_ROOT="$HOME/.pyenv" >> ~/.zshrc
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" >> ~/.zshrc
+eval "$(pyenv init - zsh)" >> ~/.zshrc
+export PATH=$HOME/.local/bin:$PATH
