@@ -8,7 +8,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.wildmenu = true
 vim.opt.wildmode = { 'list', 'longest' }
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -43,7 +43,7 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.confirm = true
 vim.opt.colorcolumn = "100"
-vim.opt.textwidth = 100
+vim.opt.textwidth = 0 -- A positive num here makes nvim break lines when threshold is reached
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Mappings

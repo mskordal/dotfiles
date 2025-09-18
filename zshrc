@@ -1,4 +1,4 @@
-source /home/mskordal/.oh-my-zsh/antigen.zsh
+source /Users/mskordal/.oh-my-zsh/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -17,7 +17,7 @@ antigen bundle zsh-users/zsh-completions
 
 # Load the theme.
 #antigen theme robbyrussell
-antigen theme bira
+antigen theme ys
 # antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
@@ -32,7 +32,7 @@ alias open="xdg-open"
 export PATH=$PATH:~/.local/share/eccodes/bin
 
 # Pyenv (handle multiple python versions)
-export PYENV_ROOT="$HOME/.pyenv" >> ~/.zshrc
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" >> ~/.zshrc
-eval "$(pyenv init - zsh)" >> ~/.zshrc
+# export PYENV_ROOT="$HOME/.pyenv" >> ~/.zshrc
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" >> ~/.zshrc
+# eval "$(pyenv init - zsh)" >> ~/.zshrc
 export PATH=$HOME/.local/bin:$PATH
