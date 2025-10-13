@@ -63,7 +63,7 @@ ${PRIVILEGE} ${PKG_MANAGER} ${INSTALL_CMD} ${AUTO_CONFIRM} zsh tmux
 rm -rf "$HOME/.oh-my-zsh"
 export RUNZSH=no  # prevent auto-launch
 export CHSH=no    # don’t change shell automatically
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+yes n | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Install antigent for zsh
 curl -L git.io/antigen > "$HOME/.oh-my-zsh/antigen.zsh"
 # Install uv
