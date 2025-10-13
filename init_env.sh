@@ -26,18 +26,18 @@ elif [[ "$OS" == "Linux" ]]; then
         DISTRO_LIKE="${ID_LIKE,,}"
 
         if [[ "$DISTRO_ID" =~ (debian|ubuntu|linuxmint|pop) ]] || [[ "$DISTRO_LIKE" =~ debian ]]; then
-            PKG="apt"
+            PKG_MANAGER="apt"
         elif [[ "$DISTRO_ID" =~ (fedora|rhel|centos|rocky|almalinux|ol|amazon) ]] || [[ "$DISTRO_LIKE" =~ (rhel|fedora|centos) ]]; then
-            PKG="dnf"
+            PKG_MANAGER="dnf"
         elif [[ "$DISTRO_ID" =~ (opensuse|sles|suse) ]] || [[ "$DISTRO_LIKE" =~ suse ]]; then
-            PKG="zypper"
+            PKG_MANAGER="zypper"
             AUTO_CONFIRM="-n"
         elif [[ "$DISTRO_ID" =~ (arch|manjaro|endeavouros) ]]; then
-            PKG="pacman"
+            PKG_MANAGER="pacman"
             INSTALL_CMD="-S"
             AUTO_CONFIRM="--noconfirm"
         elif [[ "$DISTRO_ID" =~ (alpine) ]]; then
-            PKG="apk"
+            PKG_MANAGER="apk"
             INSTALL_CMD="add"
             AUTO_CONFIRM=""
         else
