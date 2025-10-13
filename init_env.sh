@@ -70,9 +70,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Clone rc files
-cp zshrc ~/.zshrc
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cp "$SCRIPT_DIR/zshrc" "$HOME/.zshrc"
 sed -i.bak "1s|^source .*antigen.zsh|source $HOME/.oh-my-zsh/antigen.zsh|" "$HOME/.zshrc"
-cp tmux.conf ~/.tmux.conf
-cp vimrc ~/.vimrc
+cp "$SCRIPT_DIR/tmux.conf" "$HOME/.tmux.conf"
+cp "$SCRIPT_DIR/vimrc" "$HOME/.vimrc"
 # Install vim-plug plugins in vim
 nvim +PlugInstall +qall
