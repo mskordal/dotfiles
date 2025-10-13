@@ -5,6 +5,7 @@ set -euo pipefail
 
 PKG_MANAGER="unknown"
 OS="$(uname -s)"
+PRIVILEGE=""
 INSTALL_CMD="install"
 AUTO_CONFIRM="-y"
 
@@ -19,6 +20,7 @@ if [[ "$OS" == "Darwin" ]]; then
         exit 1
     fi
 elif [[ "$OS" == "Linux" ]]; then
+    PRIVILEGE="sudo"
     if [ -r /etc/os-release ]; then
         # Source os-release where key value pairs are exported
         . /etc/os-release
