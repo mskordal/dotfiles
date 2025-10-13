@@ -59,16 +59,17 @@ fi
 
 # Install zsh and tmux
 ${PRIVILEGE} ${PKG_MANAGER} ${INSTALL_CMD} ${AUTO_CONFIRM} zsh tmux
-# Install oh-my-zsh
+# Remove privious oh-my-zsh and Install new
+rm -rf "$HOME/.oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Install antigent for zsh
-curl -L git.io/antigen > ~/.oh-my-zsh/antigen.zsh
+curl -L git.io/antigen > "$HOME/.oh-my-zsh/antigen.zsh"
 # Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # Install tpm for tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 # Install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Clone rc files
