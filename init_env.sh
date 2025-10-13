@@ -3,6 +3,8 @@
 # Exit immidiately on failed command (-e), unset variables (-u) or pipefail (-o pipefail)
 set -euo pipefail
 
+ZSHRC="$HOME/.zshrc"
+ANTIGEN_LINE="source \$HOME/.oh-my-zsh/antigen.zsh"
 PKG_MANAGER="unknown"
 OS="$(uname -s)"
 PRIVILEGE=""
@@ -72,7 +74,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Clone rc files
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cp "$SCRIPT_DIR/zshrc" "$HOME/.zshrc"
-sed -i.bak "1s|^source .*antigen.zsh|source $HOME/.oh-my-zsh/antigen.zsh|" "$HOME/.zshrc"
+sed -i.bak "1s|^source .*antigen.zsh|source $ANTIGEN_LINE|" "$ZSHRC"
 cp "$SCRIPT_DIR/tmux.conf" "$HOME/.tmux.conf"
 cp "$SCRIPT_DIR/vimrc" "$HOME/.vimrc"
 # Install vim-plug plugins in vim
