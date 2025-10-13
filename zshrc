@@ -25,7 +25,6 @@ antigen apply
 
 # aliases
 alias l="ls -lah"
-alias vim="vimx"
 alias open="xdg-open"
 
 # Path exports
