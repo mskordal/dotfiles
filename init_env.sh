@@ -81,4 +81,4 @@ sed -i.bak "1s|^source .*antigen.zsh|source $ANTIGEN_LINE|" "$ZSHRC"
 cp "$SCRIPT_DIR/tmux.conf" "$HOME/.tmux.conf"
 cp "$SCRIPT_DIR/vimrc" "$HOME/.vimrc"
 # Install vim-plug plugins in vim
-nvim +PlugInstall +qall
+vim +PlugInstall +qall
