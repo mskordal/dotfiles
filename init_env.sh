@@ -48,6 +48,10 @@ elif [[ "$OS" == "Linux" ]]; then
         echo "Cannot detect Linux distribution (missing /etc/os-release)"
         exit 1
     fi
+else
+    echo "Unsupported operating system: $OS"
+    exit 1
+fi
 
 # Install zsh and tmux
 ${PKG_MANAGER} ${INSTALL_CMD} ${AUTO_CONFIRM} zsh tmux
