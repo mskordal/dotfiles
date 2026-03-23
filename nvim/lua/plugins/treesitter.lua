@@ -7,7 +7,8 @@ return {
         configs.setup({
             ensure_installed = {
                 'c', 'python', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'heex', 'javascript',
-                'html', 'dockerfile', 'hcl', 'markdown', 'markdown_inline', 'bash', 'yaml'
+                'html', 'dockerfile', 'hcl', 'markdown', 'markdown_inline', 'bash', 'yaml', 'tsx',
+                'typescript', 'toml'
             },
             sync_install = false,
             highlight = {
